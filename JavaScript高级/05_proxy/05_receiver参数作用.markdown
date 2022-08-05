@@ -1,0 +1,1 @@
+1. reciver是创建时的代理对象，传入reflect可以改变set,get方法中的this
