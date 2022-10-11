@@ -1,1 +1,44 @@
 1. 函数的父级作用域在编译时就确定了 编译时确定函数的内存地址和父级作用域
+2.  <div class="avatar">
+    <div class="container">
+      <div>
+        <img id="image" :src="url" alt="Picture" />
+      </div>
+    </div>
+    <div class="yulan">
+      <div style="text-align: center" class="small"></div>
+    </div>
+    <button @click="getImg">获取图片</button>
+    <img :src="destURL" />
+  </div>
+3.  const image = document.getElementById("image");
+      const self = this;
+      this.cropper = new Cropper(image, {
+        ready: function () {
+          self.croppable = true;
+        },
+        aspectRatio: 1,
+        viewMode: 1,
+        background: false,
+        zoomable: false,
+        preview: ".small",
+      });
+    });
+    
+     let tmp = this.cropper.getCroppedCanvas({
+        imageSmoothingQuality: 'high'
+      });
+      this.destURL = tmp.toDataURL();
+      tmp.toBlob((blob)=>{
+        const file = new File([blob],"哈哈哈.png",{
+            type:"image/png"
+        })
+        let formData = new FormData();
+        formData.append("img",file);
+        uploadImg(formData)
+      })
+      .cropper-view-box,
+.cropper-face {
+  border-radius: 50%;
+}
+      
