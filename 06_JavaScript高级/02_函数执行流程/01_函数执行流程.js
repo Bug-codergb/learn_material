@@ -28,3 +28,10 @@ const filePath = path.resolve(__dirname, "../../", "./upload/video/a.m3u8");
     // ctx.body = {
     //   url:"http://localhost:8888/a.m3u8"
     // };
+const videoPath = path.resolve(__dirname,"../../","./upload/video/1665715289158.mp4");
+    ffmpeg(videoPath).videoCodec('libx264').format("hls").outputOption('-hls_list_size 0')
+    .outputOption('-hls_time 30').output(path.resolve(__dirname,"../../","./upload/video/2.m3u8")).run()
+    ctx.body={
+      message:"ok"
+    }
+fluent-ffmpeg
