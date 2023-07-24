@@ -5,8 +5,146 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        width: 1200px;
+        height: 600px;
+        border: 1px solid pink;
+        margin: 50px 0 0 100px;
+      }
+      .inner{
+        cursor: move;
+        position: relative;
+      }
+      .inner .top{
+        width: 100%;
+        height: 2px;
+        background-color: skyblue;
+        cursor: ns-resize;
+      }
+      .inner .bottom{
+        width: 100%;
+        height: 2px;
+        background-color: skyblue;
+        cursor: ns-resize;
+        position: absolute;
+        top: 100%;
+        cursor: ns-resize;
+      }
+      .inner .left{
+        position: absolute;
+        width: 2px;
+        background-color: skyblue;
+        cursor: ew-resize;
+        left: 0;
+        height: 100%;
+      }
+      .inner .right{
+        position: absolute;
+        height: 100%;
+        background-color: skyblue;
+        cursor: ew-resize;
+        width: 2px;
+        left: 100%;
+        top: 0;
+      }
+    </style>
 </head>
 <body>
   <script src="./09_对象和原型/01_原型链的理解.js"></script>
+  <div class="box">
+      <div class="inner">
+        <div class="top"></div>
+        <div class="right"></div>
+        <div class="bottom"></div>
+        <div class="left"></div>
+      </div>
+    </div>
+    <script>
+      let box = document.querySelector(".box");
+      let a = document.querySelector(".inner");
+      box.onmousedown = async function (e) {
+        console.log(e)
+        let clickLeft = e.clientX - box.offsetLeft;
+        let clickTop = e.clientY - box.offsetTop;
+        console.log(clickLeft)
+        a.style.transform = `translate(${e.clientX - box.offsetLeft}px,${
+          e.clientY - box.offsetTop
+        }px)`;
+        a.style.width = `0px`;
+        a.style.height = `0px`;
+        a.style.border = "0px solid #ec4141";
+        document.onmousemove = function (e) {
+          let nativeLeft = e.clientX;
+          let nativeTop = e.clientY;
+          if (nativeLeft < box.offsetLeft) nativeLeft = box.offsetLeft;
+          if (nativeLeft >= box.offsetLeft + box.clientWidth){
+            nativeLeft = box.offsetLeft + box.clientWidth;
+           }
+          if (nativeTop <= box.offsetTop) nativeTop = box.offsetTop;
+          if (nativeTop >= box.offsetTop + box.clientHeight){
+            nativeTop = box.offsetTop + box.clientHeight;
+          }
+
+          let moveLeft = nativeLeft - box.offsetLeft;
+          let moveTop = nativeTop - box.offsetTop;
+
+          if (moveLeft < clickLeft && moveTop > clickTop) {
+            //左下角
+            a.style.transform = `translate(${moveLeft}px,${clickTop}px)`;
+          } else if (moveLeft < clickLeft && moveTop < clickTop) {
+            //左上角
+            a.style.transform = `translate(${moveLeft}px,${moveTop}px)`;
+          } else if (moveLeft > clickLeft && moveTop < clickTop) {
+            //右上角
+            a.style.transform = `translate(${clickLeft}px,${moveTop}px)`;
+          }else if(moveLeft > clickLeft && moveTop > clickTop){
+            a.style.transform = `translate(${clickLeft}px,${clickTop}px)`;
+          }
+          a.style.width = `${Math.abs(clickLeft - moveLeft)}px`;
+          a.style.height = `${Math.abs(moveTop - clickTop)}px`;
+          a.style.border = "1px solid #ec4141";
+          if(Math.abs(clickLeft - moveLeft)===0 && Math.abs(clickTop - moveTop) ===0 ){
+            a.style.border = "0px solid #ec4141";
+          }
+        };
+      };
+      document.onmouseup = function (e) {
+        document.onmousemove = null;
+      };
+      a.onmousedown = function(e){
+        e.stopPropagation();  
+        const translate = this.style.transform.substring( this.style.transform.indexOf("(")+1, this.style.transform.length-1 );
+        const translateX = parseInt(translate.split(",")[0]);
+        const translateY = parseInt(translate.split(",")[1]);
+
+        let clickLeft = e.clientX-box.offsetLeft - translateX;
+        let clickTop = e.clientY - box.offsetTop - translateY;
+        document.onmousemove = function(event){
+          let left = event.clientX - box.offsetLeft-clickLeft;
+          let top = event.clientY - box.offsetTop - clickTop;
+          console.log(left,top)
+          if(left<0) left=0;
+          if(top<0) top=0;
+          if(left>box.clientWidth-a.clientWidth) left = box.clientWidth-a.clientWidth;
+          if(top>box.clientHeight-a.clientHeight) top = box.clientHeight-a.clientHeight
+          a.style.transform = `translate(${left}px,${top}px)`
+        } 
+      }
+      let innerTop = document.querySelector(".top");
+      let innerLeft = document.querySelector(".left");
+      let innerBottom = document.querySelector(".bottom");
+      let innerRight = document.querySelector(".right");
+      innerTop.onmousedown=function(e){
+        e.stopPropagation();
+        document.onmousemove = function (e) {
+          
+        }
+      }
+    </script>
 </body>
 </html>
