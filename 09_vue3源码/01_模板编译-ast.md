@@ -256,10 +256,10 @@ parseInterpolation用于解析插值语法主要通过截取{{ }}内部的内容
 
   - **文本节点**
 
-    <img src="/Users/guobin/Library/Application Support/typora-user-images/image-20230814111412148.png" alt="image-20230814111412148" style="zoom:50%;" />
+    <img src="/Users/guobin/Downloads/image-20230814111412148.png" alt="image-20230814111412148" style="zoom:50%;" />
 
   - **指令**
 
-    <img src="/Users/guobin/Library/Application Support/typora-user-images/image-20230814111432798.png" alt="image-20230814111432798" style="zoom:50%;" />
+    <img src="/Users/guobin/Downloads/image-20230814111432798.png" alt="image-20230814111432798" style="zoom:50%;" />
 
   
