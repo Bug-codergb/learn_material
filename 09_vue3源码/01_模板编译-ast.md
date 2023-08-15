@@ -19,6 +19,8 @@ const parent = last(ancestors) 获取当前节点的父节点，last用于获取
 const nodes = [] //用于存储解析完毕的节点
 while (!isEnd(context, mode, ancestors)) {
     //遍历字符串，直至所有节点匹配完毕
+    // 分别解析插值语法，元素，注释，文本节点等
+    //removedWhitespace 处理解析后的空格
  }
 ```
 
@@ -61,8 +63,6 @@ function startsWithEndTagOpen(source: string, tag: string): boolean {
 }
 ```
 
-
-
 - parseELement
 
 parseElement用于解析元素，其内部实现通过parseTag解析标签，parseElement处理parseTag解析后的结果，一般情况下获取解析后的element后，将其添加到祖先元素后，通过**递归**的形式再次调用parseChildren解析其子元素，解析子元素后，将其从ancestor中弹出。将解析出来的element（children）赋值给element。
@@ -101,7 +101,7 @@ const endTokens = ['<', context.options.delimiters[0]]//如果是标签的开头
     loc: getSelection(context, start)
   }
 
-// 改方法用于解析文本内容
+// 该方法用于解析文本内容
 function parseTextData(
   context: ParserContext,
   length: number,
@@ -215,6 +215,42 @@ if (!context.inVPre && /^(v-[A-Za-z0-9-]|:|\.|@|#)/.test(name)) {
 ```
 
 - parseAttributeValue
+
+```javascript
+const start = getCursor(context)
+  let content: string;//用于存储解析出来的属性值
+  const quote = context.source[0]//引号开头
+  const isQuoted = quote === `"` || quote === `'`
+  if (isQuoted) {
+    // Quoted value.
+    advanceBy(context, 1)
+
+    const endIndex = context.source.indexOf(quote)
+    if (endIndex === -1) { // 没有引号结尾则直接取template长度
+      content = parseTextData(
+        context,
+        context.source.length,
+        TextModes.ATTRIBUTE_VALUE
+      )
+    } else {
+      //截取属性值
+      content = parseTextData(context, endIndex, TextModes.ATTRIBUTE_VALUE)
+      advanceBy(context, 1)
+    }
+  } else {
+    // Unquoted
+    const match = /^[^\t\r\n\f >]+/.exec(context.source)
+    if (!match) {
+      return undefined
+    }
+    content = parseTextData(context, match[0].length, TextModes.ATTRIBUTE_VALUE)
+  }
+  return { content, isQuoted, loc: getSelection(context, start) }
+```
+
+- parseInterpolation
+
+parseInterpolation用于解析插值语法主要通过截取{{ }}内部的内容，NodeTypes类型为INTERPOLATION，由于在实际开发的过程中，用户书写插值语法会存在换行或者空格，因此需要处理内容的位置信息。
 
 - 最后解析出ast结果
 
