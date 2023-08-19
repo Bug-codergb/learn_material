@@ -141,7 +141,7 @@ console.log(proxy.indexOf(obj));
 
 get和依赖收集相关连，接下来介绍如何依赖收集。介绍依赖之前，先介绍一下依赖的数据结构，首先reactive只能代理对象类型，所以每一个对象会对应一个响应式对象，而对象的每一个健会对应一个依赖，所以就形成以下结构。
 
-<img src="/Users/guobin/Library/Application Support/typora-user-images/image-20230817103652674.png" alt="image-20230817103652674" style="zoom:80%;" />
+<img src="/Users/guobin/Desktop/112.png" alt="image-20230817103652674" style="zoom:80%;" />
 
 先看几个全局变量
 
