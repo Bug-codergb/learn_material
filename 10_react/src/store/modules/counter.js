@@ -2,7 +2,7 @@ import {
   createSlice,
   createAsyncThunk
 } from "@reduxjs/toolkit";
-export const fetctHome = createAsyncThunk("fetchHome", async () => {
+export const fetctHome = createAsyncThunk("fetchHome", async (extraInfo, { dispatch,getState }) => {
   const res = [];
   return res;
 })
@@ -20,16 +20,23 @@ const counterSlice = createSlice({
       state.name = action.payload
     }
   },
-  extraReducers: {
-    [fetctHome.pending](state,action) {
+  // extraReducers: {
+  //   [fetctHome.pending](state,action) {
       
-    },
-    [fetctHome.fulfilled](state,action) {
+  //   },
+  //   [fetctHome.fulfilled](state,action) {
       
-    },
-    [fetctHome.rejected](state,action) {
+  //   },
+  //   [fetctHome.rejected](state,action) {
       
-    }
+  //   }
+  // }
+  extraReducers: (build) => {
+    build.addCase(fetctHome.pending, (state,action) => {
+      
+    }).addCase(fetctHome.fulfilled, (state,action) => {
+      
+    })
   }
 })
 export const { addNumber,subNumber} = counterSlice.actions;
