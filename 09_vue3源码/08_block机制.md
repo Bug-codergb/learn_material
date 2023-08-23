@@ -1,5 +1,3 @@
 > block机制是为了在渲染阶段，减少没必要的patch所做的在编译阶段将需要patch的节点提取到vnode的dynamicChildren中，然后在发生dom更新时直接获取节点的dynamicChildren进行比较(patch即可)。
 
 默认情况下模板的跟节点会添加blok，编译后形成```openBlock()```,```createElementBlock()```。block的的收集是在```vnode```中，首先定义2个变量，blockStack(用于存储block，因为存在block嵌套)，currentBlock(当前block，用于收集vnode)，执行openBlock后，currentBlock=赋值为空数组，```blockStack```用于存储当前活跃的block。初始化后，调用createElementBlock()。调用```createElementBlock```时，会调用```setupBlock```，由于它的参数是```createBaseVNode```的调用，所以先执行```createBaseVNode```，在执行的过程中如果遇到patchFlag>0则将其vnode添加至```currentBlock```中，在创建虚拟dom的过程中，block的收集贯穿始终，如果遇到block嵌套，则将currentBlock赋值为空数组，(刚才的```currentBlock```已经存储在了```blockStack```中)，然后执行流程如上，执行完毕后，进入setupBlock中，将vnode的```dynamicChildrend```赋值为currentBlock，然后执行```closeBlock```。关闭此次block后，currentBlock赋值为blockStack的最后一个值(其数据结构类似于依赖收集的收集和恢复收集，记录shouldTrack，)。通过这些步骤，节点的```dynamicChildren```就生成了，在渲染阶段比较节点的```dynamicChildren```即可，减少了其他不必要的层级对比。
-
-https://spankbang.com/7okvl/video/ejaculating
