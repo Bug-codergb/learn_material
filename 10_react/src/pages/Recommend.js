@@ -1,6 +1,7 @@
 import React, { memo, PureComponent } from "react";
 import { connect } from "react-redux";
-import { changeUserAgeAction,changeUserNameAction} from "../store/actionCreators";
+import { addNumber, subNumber } from "../store/modules/counter";
+
 class Recommend extends PureComponent{
   constructor(props) {
     super(props)  
@@ -68,10 +69,13 @@ const mapStateToProps = (state) => {
 const mapToDispatch = (dispatch) => {
   return {
     changeAge(num) {
-      dispatch(changeUserAgeAction(num))
+      dispatch(addNumber(num))
     },
     changeName(name) {
-      dispatch(changeUserNameAction(name))
+      dispatch(subNumber(name))
+    },
+    fetchHomeAction() {
+      dispatch(fetctHome())
     }
   }
 }
