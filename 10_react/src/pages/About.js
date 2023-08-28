@@ -1,8 +1,13 @@
-import React, { memo } from "react";
+import React, { memo,useContext } from "react";
 import { HomeContext,DemonContext } from "./context/homeContext";
 const About = memo((props) => {
- 
+ const context = useContext(HomeContext);
+ console.log(context);
   console.log("about从新渲染")
+  const {increment} = props;
+  const aboutHandler=()=>{
+    increment("lina")
+  }
   return (
     <div>
       <HomeContext.Consumer>
@@ -18,7 +23,10 @@ const About = memo((props) => {
     {
       (value) => {
         return (
-          <div>{ value.name}</div>
+          <div>{
+            value.name}
+            <button onClick={()=>aboutHandler()}>about点击哈哈哈</button>
+          </div>
         )
       }
     }
