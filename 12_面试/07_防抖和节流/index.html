@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">
+      <input id="inp" />
+    </div>
+    <script src="./01_防抖.js"></script>
+    <script>
+      let btn = document.getElementById("inp");
+      btn.oninput = debounce(
+        function (e) {
+          console.log("zhixing", this, e);
+        },
+        1500,
+        true
+      );
+    </script>
+  </body>
+</html>
