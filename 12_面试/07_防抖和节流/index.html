@@ -10,14 +10,15 @@
       <input id="inp" />
     </div>
     <script src="./01_防抖.js"></script>
+    <script src="./02_节流.js"></script>
     <script>
       let btn = document.getElementById("inp");
-      btn.oninput = debounce(
+      btn.oninput = throttle(
         function (e) {
           console.log("zhixing", this, e);
         },
         1500,
-        true
+        false
       );
     </script>
   </body>
