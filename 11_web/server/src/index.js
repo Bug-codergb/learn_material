@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
+// 
 app.all("*", (req, res, next) => {
   res.set("Access-Control-Allow-Origin", "*");
   next();
-})
+});
+
 app.get("/test1", (req,res,next) => {
   res.send({
     status: 200,
@@ -40,24 +42,35 @@ app.get("/test6", (req,res,next) => {
     data:"test6"
   })
 })
-app.get("/test7", (req,res,next) => {
+app.get("/test7", (req, res, next) => {
   res.send({
     status: 200,
-    data:"test7"
+    data: "test7"
   })
-})
-app.get("/test8", (req,res,next) => {
+});
+
+app.get("/test8", (req, res, next) => {
   res.send({
     status: 200,
-    data:"test8"
-  })
+    data: "test8"
+  });
 })
 app.get("/test9", (req,res,next) => {
   res.send({
     status: 200,
-    data:"test9"
-  })
+    data: "test9"
+  });
 })
+
+app.get("/list", (req, res, next) => {
+  res.set("Location", "https://www.baidu.com");
+  res.status(301)
+  res.send({
+    status: 307
+  });
+});
+
 app.listen(8888, () => {
-  console.log("服务启动")
-})
+  console.log("服务启动");
+});
+
