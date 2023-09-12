@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [
+        {
+          name: "foo",
+          fn: function foo() {
+            console.log(2);
+          },
+        },
+        {
+          name: "bar",
+          fn: function bar() {
+            console.log(3);
+          },
+        },
+      ];
+      const ul = document.createElement("ul");
+      for (let i = 0; i < arr.length; i++) {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <span>${arr[i].name}</span>
+          <button onclick='${arr[i].fn}'>删除</button>
+        `;
+        li.setAttribute("data-index", i);
+        ul.insertBefore(li, null);
+      }
+
+      document.body.appendChild(ul);
+    </script>
+  </body>
+</html>
