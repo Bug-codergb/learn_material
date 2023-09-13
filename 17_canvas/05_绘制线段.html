@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <canvas id="c" width="500" height="500"></canvas>
+  <script>
+    const c = document.getElementById("c");
+    const ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.moveTo(125,125);
+    ctx.lineTo(175,175);
+    ctx.lineTo(75,175);
+    ctx.lineTo(125,125);
+    ctx.strokeStyle="red"
+    ctx.stroke();
+    ctx.fillStyle="pink"
+    ctx.fill();
+  </script>
+</body>
+</html>

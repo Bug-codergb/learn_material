@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <div class="box">
+    <canvas id="c" width="300" height="500"></canvas>
+  </div>
+  <script>
+    let c = document.getElementById("c");
+    const ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(100,200,60,0,Math.PI*2,true);
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.arc(80,180,20,0,Math.PI*2,true);
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.arc(120,180,20,0,Math.PI*2,true);
+
+    ctx.stroke();
+    //这里其实可以通过moveTo去绘制，绘制连续的断开的图形，而不需要每次都 beginPath,closePath()
+  </script>
+</body>
+</html>
