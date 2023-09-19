@@ -4,8 +4,10 @@ module.exports = {
   entry: "./src/index.ts",
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename:"bundle.js"
+    filename:"bundle.js",
+    clean:true
   },
+  devtool:"source-map",
   devServer: {
     port: 8888,
     open:true
