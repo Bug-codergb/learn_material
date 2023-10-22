@@ -1,21 +1,27 @@
 <template>
   <div id="app">
-    <Demon />
+    <HelloWorld />
   </div>
 </template>
 
 <script>
-//import HelloWorld from "./components/HelloWorld.vue";
-import Demon from "./components/Demon.vue";
+import HelloWorld from "./components/HelloWorld.vue";
+//import Demon from "./components/Demon.vue";
 export default {
   name: "App",
   components: {
-    Demon,
+    //Demon,
+    HelloWorld,
   },
 };
 </script>
 
 <style>
 #app {
+  img {
+    display: block;
+    width: 100px;
+    height: 100px;
+  }
 }
 </style>

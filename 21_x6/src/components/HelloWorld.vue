@@ -83,6 +83,23 @@ export default {
         ...port(),
       },
     });
+
+    const img = document.createElement("img");
+    img.src = require("../assets/logo.png");
+    let self = this;
+    img.onload = function () {
+      const data = self.getBase64Image(img);
+      console.log(data);
+
+      self.graph.addNode({
+        shape: "image",
+        x: 320,
+        y: 120,
+        width: 94,
+        height: 28,
+        imageUrl: data,
+      });
+    };
     stencil.load([r3], "group1");
     stencil.load([c3], "group2");
     //this.graph.fromJSON(data)
@@ -109,6 +126,17 @@ export default {
       const ports = container.querySelectorAll(".x6-port-body");
       showPorts(ports, true);
     });
+  },
+  methods: {
+    getBase64Image(img) {
+      var canvas = document.createElement("canvas");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      var ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0, img.width, img.height);
+      var dataURL = canvas.toDataURL("image/png");
+      return dataURL;
+    },
   },
 };
 </script>
