@@ -1,6 +1,7 @@
 export const options = (Shape) => {
   return {
     grid: true,
+
     mousewheel: {
       enabled: true,
       zoomAtMousePosition: true,

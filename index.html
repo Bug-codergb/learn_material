@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .content {
+        width: 500px;
+        height: 300px;
+        border: 1px solid pink;
+        padding: 10px;
+        font-size: 18px;
+        line-height: 2;
+        word-break: break-all;
+        box-sizing: border-box;
+        outline: none;
+        display: inline-block;
+      }
+      .one {
+        width: 300px;
+        height: 300px;
+        background-color: pink;
+        position: absolute;
+        left: 0;
+      }
+      #btn {
+        outline: none;
+        border: none;
+        background-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content" contenteditable="true">
+      竟惹i哦隔阂如果热竟惹i哦隔阂如果热竟惹i哦隔阂如果热竟惹i哦隔阂如果热竟惹i哦隔阂如果热竟惹i哦隔阂如果热
+    </div>
+    <button type="button" value="zzzz" id="btn">
+      <div class="one">1</div>
+      <div class="two">2</div>
+      <input value="eeee" id="inp" />
+    </button>
+    <script>
+      const btn = document.getElementById("btn");
+      const content = document.querySelector(".content");
+      document.getElementById("inp").addEventListener("mousedown", (e) => {
+        e.preventDefault();
+        console.log(content)
+        content.blur()
+      });
+      document.addEventListener("selectionchange", function (e) {
+        e.preventDefault();
+      });
+      document
+        .querySelector(".content")
+        .addEventListener("keydown", function (e) {
+          if (e.code === "Tab") {
+            e.preventDefault();
+            const anchor = window.getSelection().anchorNode;
+            const index = getSelection().getRangeAt(0).startOffset;
+
+            const content = `\x0a\xa0\xa0\xa0\x0a\xa0`;
+            const anchorContent = anchor.textContent;
+            const innerText = this.textContent;
+            const isSimilar = anchorContent === innerText;
+            if (
+              isSimilar &&
+              anchor.innerHTML &&
+              anchor.innerHTML.includes("<br>")
+            ) {
+            } else {
+              anchor.textContent =
+                anchor.textContent.substring(0, index) +
+                content +
+                anchor.textContent.substring(index);
+              window.getSelection().collapse(anchor, index + 6);
+            }
+          }
+        });
+
+      btn.onclick = function (e) {
+        console.log("hahah  ");
+        document.execCommand("bold", false);
+      };
+    </script>
+  </body>
+</html>
