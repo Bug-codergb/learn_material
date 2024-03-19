@@ -32,3 +32,5 @@ console.log(Number("   "))//没有转为0
 console.log(isNaN({}))//对象会被转为nan
 console.log(isNaN(() => []))//数组会被转为nan
 console.log(isNaN(new Set()))
+
+console.log(!!NaN)
