@@ -1,13 +1,13 @@
 import React, { memo } from "react";
-import Home from "./pages/Home";
-import Category  from "./pages/Category";
-import { Provider } from "react-redux";
-import store from "./store/index";
+import GUseEffect from "./pages/GUseEffect";
+import {
+  HashRouter
+} from "react-router-dom"
 const App = () => {
   return (
-    <Provider store={store}>
-      <Category/>
-    </Provider>
+    <HashRouter>
+      <GUseEffect/>
+    </HashRouter>
   )
 }
 export default memo(App);
