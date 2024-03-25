@@ -1,12 +1,20 @@
-import React, { memo } from "react";
-import GUseEffect from "./pages/GUseEffect";
+import React, { memo,useState } from "react";
+import GUseState from "./pages/GUseState";
 import {
   HashRouter
 } from "react-router-dom"
 const App = () => {
+  const [isShow, setIsShow] = useState(true);
+  
+  const changeShow = () => {
+    setIsShow(!isShow);
+  }
   return (
     <HashRouter>
-      <GUseEffect/>
+      {
+        isShow&&<GUseState/>
+      }
+      <button onClick={changeShow}>切换组件显示状态</button>
     </HashRouter>
   )
 }
