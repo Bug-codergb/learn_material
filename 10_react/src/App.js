@@ -1,5 +1,5 @@
 import React, { memo,useState } from "react";
-import GUseState from "./pages/GUseState";
+import GUseTransition from "./pages/GUseTransition";
 import {
   HashRouter
 } from "react-router-dom"
@@ -12,7 +12,7 @@ const App = () => {
   return (
     <HashRouter>
       {
-        isShow&&<GUseState/>
+        isShow&&<GUseTransition/>
       }
       <button onClick={changeShow}>切换组件显示状态</button>
     </HashRouter>
