@@ -7,7 +7,12 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "docker:build":"docker build -f Dockerfile -t website:v1.0.0 .",
+    "docker:run":"docker run -d --name website -p 3000:3000 website:v1.0.0",
+    "docker:commit":"docker commit -m 'production' website website:v1.0.0",
+    "docker:save":"docker save -o website.tar website:v1.0.0",
+    "docker:load":"docker load -i website.tar"
   },
   "dependencies": {
     "nuxt": "^3.13.0",
