@@ -1,1 +1,0 @@
-console.log(this)  //node 环境下是一个{}  window下是window
