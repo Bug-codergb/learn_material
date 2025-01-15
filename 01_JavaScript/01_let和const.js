@@ -45,9 +45,12 @@ function f1() {
   console.log(n); // 5
 }
 console.log("<<<<<<< e8");
+let template = "template";
 (function(){
   var temp = "global"
+  template = "globalTHos"
   console.log("立即执行函数")
 }())
-console.log(temp);
+//console.log(temp);//报错
+console.log(template)
 ///const 指向的内存地址保存的数据不可变，
