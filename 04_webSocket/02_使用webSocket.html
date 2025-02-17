@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="./01_心跳机制.js" type="module"></script>
+    <script>
+      let ws = null;
+
+      function wsConnect() {
+        ws = new WsApp("ws://localhost:8888/heart", {
+          wsReconnect,
+        });
+      }
+      //重连
+      function wsReconnect() {
+        if (!ws) {
+          return wsConnect();
+        }
+        if (ws && ws.reconnectTimer) {
+          clearTimeout(ws.reconnectTimer);
+          ws.reconnectTimer = null;
+          wsConnect();
+        }
+      }
+      wsConnect();
+    </script>
+  </body>
+</html>
