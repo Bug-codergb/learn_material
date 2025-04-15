@@ -1,21 +1,20 @@
 {
-  "name": "06_vite",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite"
+    "start": "nodemon ./src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vitejs/plugin-vue": "^5.2.3",
-    "axios": "^1.8.4",
-    "element-plus": "^2.9.7",
-    "vite": "^6.2.3",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "koa": "^2.16.1",
+    "koa-bodyparser": "^4.4.1",
+    "koa-multer": "^1.0.2",
+    "koa-router": "^13.0.1",
+    "nodemon": "^3.1.9"
   }
 }
