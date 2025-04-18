@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input id="inp"/>
+  <script>
+      function throttle(fn, interval,immediate=true) {
+      let startTime = 0;
+      let t = null;
+      return function _throttle(...args){
+          let nowTime = new Date().getTime();
+          if (!immediate && startTime ===0) {
+              startTime = nowTime;
+          }
+          if (t) {
+              clearTimeout(t);
+          }
+          let waitTime = interval - (nowTime - startTime);
+          if (waitTime <= 0) {
+              fn.apply(this,args);
+              startTime = nowTime;
+          } else {
+          t = setTimeout(() => {
+                  fn.apply(this, args);
+              },interval)
+          }
+      }
+  }
+  const inp = document.getElementById("inp")
+    inp.addEventListener("input",throttle(function(e){
+      console.log(e.target.value)
+    },1000,true))
+  </script>
+</body>
+</html>

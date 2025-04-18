@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 300px;
+      height: 200px;
+      border: 1px solid pink;
+    }
+    .inner{
+      width: 50%;
+      height: 100px;
+      border: 1px solid skyblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="inner"></div>
+    <input id="inp"/>
+  </div>
+  <script>
+    function debounce(fn,dely,immediate = false){
+      let timer = null
+      let isInvoked = false
+      let _debounce = function(...args){
+        
+        if(timer){
+          clearTimeout(timer)
+        }
+
+        if(immediate && !isInvoked){
+          fn.apply(this,args)
+          isInvoked = true
+          return
+        }
+
+        timer = setTimeout(()=>{
+          fn.apply(this,args)
+          isInvoked = false
+        },dely)
+      }
+      _debounce.cancel = function(){
+        if(timer){
+          clearTimeout(timer)
+          time = null
+          isInvoked = false
+        }
+      }
+      return _debounce
+    }
+    const inp = document.getElementById("inp")
+    inp.addEventListener("input",debounce(function(e){
+      console.log(e.target.value)
+    },1000,true))
+    
+
+
+    const box = document.querySelector(".box")
+    const inner = document.querySelector(".inner")
+
+    /*box.addEventListener("click",(e)=>{
+      console.log(e.target)
+      console.log(e.currentTarget)
+    })*/
+    
+  </script>
+</body>
+</html>

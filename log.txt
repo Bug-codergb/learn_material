@@ -1,0 +1,453 @@
+2025-04-16T14:46:10.5363409Z Current runner version: '2.323.0'
+2025-04-16T14:46:10.5446502Z ##[group]Operating System
+2025-04-16T14:46:10.5447725Z Ubuntu
+2025-04-16T14:46:10.5448509Z 24.04.2
+2025-04-16T14:46:10.5449250Z LTS
+2025-04-16T14:46:10.5449954Z ##[endgroup]
+2025-04-16T14:46:10.5450856Z ##[group]Runner Image
+2025-04-16T14:46:10.5451738Z Image: ubuntu-24.04
+2025-04-16T14:46:10.5452565Z Version: 20250413.1.0
+2025-04-16T14:46:10.5454336Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250413.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-16T14:46:10.5456995Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250413.1
+2025-04-16T14:46:10.5458625Z ##[endgroup]
+2025-04-16T14:46:10.5459489Z ##[group]Runner Image Provisioner
+2025-04-16T14:46:10.5460483Z 2.0.422.1
+2025-04-16T14:46:10.5461156Z ##[endgroup]
+2025-04-16T14:46:10.5465389Z ##[group]GITHUB_TOKEN Permissions
+2025-04-16T14:46:10.5468303Z Actions: write
+2025-04-16T14:46:10.5469450Z Attestations: write
+2025-04-16T14:46:10.5470374Z Checks: write
+2025-04-16T14:46:10.5471224Z Contents: write
+2025-04-16T14:46:10.5472103Z Deployments: write
+2025-04-16T14:46:10.5472941Z Discussions: write
+2025-04-16T14:46:10.5473744Z Issues: write
+2025-04-16T14:46:10.5474550Z Metadata: read
+2025-04-16T14:46:10.5475310Z Models: read
+2025-04-16T14:46:10.5476370Z Packages: write
+2025-04-16T14:46:10.5477153Z Pages: write
+2025-04-16T14:46:10.5477916Z PullRequests: write
+2025-04-16T14:46:10.5478870Z RepositoryProjects: write
+2025-04-16T14:46:10.5479884Z SecurityEvents: write
+2025-04-16T14:46:10.5480701Z Statuses: write
+2025-04-16T14:46:10.5481606Z ##[endgroup]
+2025-04-16T14:46:10.5484717Z Secret source: Actions
+2025-04-16T14:46:10.5485875Z Prepare workflow directory
+2025-04-16T14:46:10.6450443Z Prepare all required actions
+2025-04-16T14:46:10.6591440Z Getting action download info
+2025-04-16T14:46:11.0585661Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-16T14:46:11.0586969Z Version: 4.2.2
+2025-04-16T14:46:11.0587973Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-16T14:46:11.0589094Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-16T14:46:11.0589895Z ##[endgroup]
+2025-04-16T14:46:11.9558936Z ##[group]Download immutable action package 'actions/setup-node@v4'
+2025-04-16T14:46:11.9560087Z Version: 4.4.0
+2025-04-16T14:46:11.9561295Z Digest: sha256:9427cefe82346e992fb5b949e3569b39d537ae41aa3086483b14eceebfc16bc1
+2025-04-16T14:46:11.9562873Z Source commit SHA: 49933ea5288caeca8642d1e84afbd3f7d6820020
+2025-04-16T14:46:11.9563951Z ##[endgroup]
+2025-04-16T14:46:12.2298716Z Download action repository 'peaceiris/actions-gh-pages@v3' (SHA:373f7f263a76c20808c831209c920827a82a2847)
+2025-04-16T14:46:12.5604652Z Complete job name: deploy
+2025-04-16T14:46:12.6383783Z ##[group]Run actions/checkout@v4
+2025-04-16T14:46:12.6385002Z with:
+2025-04-16T14:46:12.6385691Z   repository: Bug-codergb/about-me
+2025-04-16T14:46:12.6387033Z   token: ***
+2025-04-16T14:46:12.6387701Z   ssh-strict: true
+2025-04-16T14:46:12.6388410Z   ssh-user: git
+2025-04-16T14:46:12.6389116Z   persist-credentials: true
+2025-04-16T14:46:12.6389937Z   clean: true
+2025-04-16T14:46:12.6390636Z   sparse-checkout-cone-mode: true
+2025-04-16T14:46:12.6391500Z   fetch-depth: 1
+2025-04-16T14:46:12.6392184Z   fetch-tags: false
+2025-04-16T14:46:12.6392887Z   show-progress: true
+2025-04-16T14:46:12.6393603Z   lfs: false
+2025-04-16T14:46:12.6394418Z   submodules: false
+2025-04-16T14:46:12.6395469Z   set-safe-directory: true
+2025-04-16T14:46:12.6397848Z ##[endgroup]
+2025-04-16T14:46:17.0574308Z Syncing repository: Bug-codergb/about-me
+2025-04-16T14:46:17.0575702Z ##[group]Getting Git version info
+2025-04-16T14:46:17.0576124Z Working directory is '/home/runner/work/about-me/about-me'
+2025-04-16T14:46:17.0577066Z [command]/usr/bin/git version
+2025-04-16T14:46:17.3128634Z git version 2.49.0
+2025-04-16T14:46:17.3267606Z ##[endgroup]
+2025-04-16T14:46:17.3286446Z Temporarily overriding HOME='/home/runner/work/_temp/17609c48-b3b3-458c-9149-403cdd1a0625' before making global git config changes
+2025-04-16T14:46:17.3288256Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-16T14:46:17.3300870Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/about-me/about-me
+2025-04-16T14:46:17.3448069Z Deleting the contents of '/home/runner/work/about-me/about-me'
+2025-04-16T14:46:17.3451954Z ##[group]Initializing the repository
+2025-04-16T14:46:17.3456948Z [command]/usr/bin/git init /home/runner/work/about-me/about-me
+2025-04-16T14:46:17.4360260Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-16T14:46:17.4361290Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-16T14:46:17.4361954Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-16T14:46:17.4362336Z hint:
+2025-04-16T14:46:17.4362601Z hint: 	git config --global init.defaultBranch <name>
+2025-04-16T14:46:17.4362891Z hint:
+2025-04-16T14:46:17.4363190Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-16T14:46:17.4363637Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-16T14:46:17.4363973Z hint:
+2025-04-16T14:46:17.4364168Z hint: 	git branch -m <name>
+2025-04-16T14:46:17.4606039Z Initialized empty Git repository in /home/runner/work/about-me/about-me/.git/
+2025-04-16T14:46:17.4620021Z [command]/usr/bin/git remote add origin https://github.com/Bug-codergb/about-me
+2025-04-16T14:46:17.4777305Z ##[endgroup]
+2025-04-16T14:46:17.4777827Z ##[group]Disabling automatic garbage collection
+2025-04-16T14:46:17.4782165Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-16T14:46:17.4812953Z ##[endgroup]
+2025-04-16T14:46:17.4813499Z ##[group]Setting up auth
+2025-04-16T14:46:17.4820425Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-16T14:46:17.4852468Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-16T14:46:17.8430302Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-16T14:46:17.8465522Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-16T14:46:17.8702049Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-16T14:46:17.8753826Z ##[endgroup]
+2025-04-16T14:46:17.8754574Z ##[group]Fetching the repository
+2025-04-16T14:46:17.8763795Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +895f6a7fc0f7de2cbcb43d039ec78f0c3b287ebb:refs/remotes/origin/master
+2025-04-16T14:46:18.6022855Z From https://github.com/Bug-codergb/about-me
+2025-04-16T14:46:18.6023654Z  * [new ref]         895f6a7fc0f7de2cbcb43d039ec78f0c3b287ebb -> origin/master
+2025-04-16T14:46:18.6243618Z ##[endgroup]
+2025-04-16T14:46:18.6244218Z ##[group]Determining the checkout info
+2025-04-16T14:46:18.6245814Z ##[endgroup]
+2025-04-16T14:46:18.6251816Z [command]/usr/bin/git sparse-checkout disable
+2025-04-16T14:46:18.6420414Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-16T14:46:18.6452472Z ##[group]Checking out the ref
+2025-04-16T14:46:18.6457850Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+2025-04-16T14:46:18.6691110Z Reset branch 'master'
+2025-04-16T14:46:18.6693228Z branch 'master' set up to track 'origin/master'.
+2025-04-16T14:46:18.6699882Z ##[endgroup]
+2025-04-16T14:46:18.6740698Z [command]/usr/bin/git log -1 --format=%H
+2025-04-16T14:46:18.6765306Z 895f6a7fc0f7de2cbcb43d039ec78f0c3b287ebb
+2025-04-16T14:46:18.6997030Z ##[group]Run actions/setup-node@v4
+2025-04-16T14:46:18.6997331Z with:
+2025-04-16T14:46:18.6997505Z   node-version: 21
+2025-04-16T14:46:18.6997880Z   always-auth: false
+2025-04-16T14:46:18.6998066Z   check-latest: false
+2025-04-16T14:46:18.6998380Z   token: ***
+2025-04-16T14:46:18.6998559Z ##[endgroup]
+2025-04-16T14:46:18.8701905Z Attempting to download 21...
+2025-04-16T14:46:19.3796857Z Not found in manifest. Falling back to download directly from Node
+2025-04-16T14:46:19.4803131Z Acquiring 21.7.3 - x64 from https://nodejs.org/dist/v21.7.3/node-v21.7.3-linux-x64.tar.gz
+2025-04-16T14:46:20.3050539Z Extracting ...
+2025-04-16T14:46:20.3155903Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/269b2a36-5173-4404-a9d0-73e58b2430b5 -f /home/runner/work/_temp/b26e42bf-44e7-415a-83fe-a43e878ec39b
+2025-04-16T14:46:21.3115011Z Adding to the cache ...
+2025-04-16T14:46:23.0786903Z Done
+2025-04-16T14:46:23.0792005Z ##[group]Environment details
+2025-04-16T14:46:23.6687130Z node: v21.7.3
+2025-04-16T14:46:23.6687372Z npm: 10.5.0
+2025-04-16T14:46:23.6687539Z yarn: 1.22.22
+2025-04-16T14:46:23.6688199Z ##[endgroup]
+2025-04-16T14:46:23.6831412Z ##[group]Run npm install
+2025-04-16T14:46:23.6831704Z [36;1mnpm install[0m
+2025-04-16T14:46:23.6884457Z shell: /usr/bin/bash -e {0}
+2025-04-16T14:46:23.6884690Z ##[endgroup]
+2025-04-16T14:46:33.7762802Z 
+2025-04-16T14:46:33.7771758Z added 125 packages, and audited 126 packages in 10s
+2025-04-16T14:46:33.7772208Z 
+2025-04-16T14:46:33.7772486Z 38 packages are looking for funding
+2025-04-16T14:46:33.7772976Z   run `npm fund` for details
+2025-04-16T14:46:33.7839941Z 
+2025-04-16T14:46:33.7840483Z 3 moderate severity vulnerabilities
+2025-04-16T14:46:33.7840848Z 
+2025-04-16T14:46:33.7841230Z To address all issues (including breaking changes), run:
+2025-04-16T14:46:33.7841793Z   npm audit fix --force
+2025-04-16T14:46:33.7842046Z 
+2025-04-16T14:46:33.7842239Z Run `npm audit` for details.
+2025-04-16T14:46:33.8216035Z ##[group]Run npm run docs:build
+2025-04-16T14:46:33.8216582Z [36;1mnpm run docs:build[0m
+2025-04-16T14:46:33.8264362Z shell: /usr/bin/bash -e {0}
+2025-04-16T14:46:33.8264616Z ##[endgroup]
+2025-04-16T14:46:34.0477704Z 
+2025-04-16T14:46:34.0479134Z > about-me@1.0.0 docs:build
+2025-04-16T14:46:34.0479957Z > vitepress build
+2025-04-16T14:46:34.0480281Z 
+2025-04-16T14:46:34.3050983Z [{"text":"工程化","link":"/engineering/index.html"},{"text":"碎片化","link":"/fragments/index.html","children":[{"text":"浏览器复制文字","link":"/fragments/copy/index.html"},{"text":"js实现继承","link":"/fragments/extend/index.html"},{"text":"请求并发控制","link":"/fragments/request-concurrency/index.html"},{"text":"定高虚拟列表","link":"/fragments/virtual-list/index.html"},{"text":"不定高虚拟列表","link":"/fragments/virtual-list-plus/index.html"}]},{"text":"HTML&CSS","link":"/html-css/index.html"},{"text":"JavaScript","link":"/javascript/index.html","children":[{"text":"迭代器","link":"/javascript/iterator/index.html"},{"text":"数学","link":"/javascript/math/index.html"},{"text":"对象","link":"/javascript/object/index.html"},{"text":"代理和反射","link":"/javascript/proxy/index.html"}]},{"text":"React","link":"/react/index.html"},{"text":"TypeScript","link":"/ts/index.html"},{"text":"Vue","link":"/vue/index.html"}]
+2025-04-16T14:46:34.3055519Z ***********
+2025-04-16T14:46:34.3060573Z {"/fragments/":[{"items":[{"text":"浏览器复制文字","link":"/fragments/copy/index.html"},{"text":"js实现继承","link":"/fragments/extend/index.html"},{"text":"请求并发控制","link":"/fragments/request-concurrency/index.html"},{"text":"定高虚拟列表","link":"/fragments/virtual-list/index.html"},{"text":"不定高虚拟列表","link":"/fragments/virtual-list-plus/index.html"}]}],"/javascript/":[{"items":[{"text":"迭代器","link":"/javascript/iterator/index.html"},{"text":"数学","link":"/javascript/math/index.html"},{"text":"对象","link":"/javascript/object/index.html"},{"text":"代理和反射","link":"/javascript/proxy/index.html"}]}]}
+2025-04-16T14:46:34.3224217Z 
+2025-04-16T14:46:34.3224976Z   [32m[1mvitepress[22m v1.6.3[39m
+2025-04-16T14:46:34.3225400Z 
+2025-04-16T14:46:34.3256753Z - building client + server bundles...
+2025-04-16T14:46:38.0262735Z [32m✓[0m building client + server bundles...
+2025-04-16T14:46:38.0418831Z - rendering pages...
+2025-04-16T14:46:38.2297621Z [32m✓[0m rendering pages...
+2025-04-16T14:46:38.2325553Z build complete in 3.96s.
+2025-04-16T14:46:38.2777911Z ##[group]Run ls -la .vitepress/dist
+2025-04-16T14:46:38.2778303Z [36;1mls -la .vitepress/dist[0m
+2025-04-16T14:46:38.2825657Z shell: /usr/bin/bash -e {0}
+2025-04-16T14:46:38.2825922Z ##[endgroup]
+2025-04-16T14:46:38.2905097Z total 112
+2025-04-16T14:46:38.2905600Z drwxr-xr-x 10 runner docker  4096 Apr 16 14:46 .
+2025-04-16T14:46:38.2906387Z drwxr-xr-x  3 runner docker  4096 Apr 16 14:46 ..
+2025-04-16T14:46:38.2907073Z -rw-r--r--  1 runner docker  4317 Apr 16 14:46 404.html
+2025-04-16T14:46:38.2907805Z -rw-r--r--  1 runner docker 19598 Apr 16 14:46 api-examples.html
+2025-04-16T14:46:38.2908504Z drwxr-xr-x  3 runner docker  4096 Apr 16 14:46 assets
+2025-04-16T14:46:38.2909369Z drwxr-xr-x  2 runner docker  4096 Apr 16 14:46 engineering
+2025-04-16T14:46:38.2909901Z drwxr-xr-x  7 runner docker  4096 Apr 16 14:46 fragments
+2025-04-16T14:46:38.2910376Z -rw-r--r--  1 runner docker   678 Apr 16 14:46 hashmap.json
+2025-04-16T14:46:38.2910812Z drwxr-xr-x  2 runner docker  4096 Apr 16 14:46 html-css
+2025-04-16T14:46:38.2911199Z -rw-r--r--  1 runner docker 12420 Apr 16 14:46 index.html
+2025-04-16T14:46:38.2911694Z drwxr-xr-x  6 runner docker  4096 Apr 16 14:46 javascript
+2025-04-16T14:46:38.2912126Z -rw-r--r--  1 runner docker 18145 Apr 16 14:46 markdown-examples.html
+2025-04-16T14:46:38.2912527Z drwxr-xr-x  2 runner docker  4096 Apr 16 14:46 react
+2025-04-16T14:46:38.2912878Z drwxr-xr-x  2 runner docker  4096 Apr 16 14:46 ts
+2025-04-16T14:46:38.2913248Z -rw-r--r--  1 runner docker   900 Apr 16 14:46 vp-icons.css
+2025-04-16T14:46:38.2913604Z drwxr-xr-x  2 runner docker  4096 Apr 16 14:46 vue
+2025-04-16T14:46:38.2932727Z ##[group]Run find .vitepress/dist
+2025-04-16T14:46:38.2933006Z [36;1mfind .vitepress/dist[0m
+2025-04-16T14:46:38.2974041Z shell: /usr/bin/bash -e {0}
+2025-04-16T14:46:38.2974254Z ##[endgroup]
+2025-04-16T14:46:38.3051543Z .vitepress/dist
+2025-04-16T14:46:38.3052036Z .vitepress/dist/vue
+2025-04-16T14:46:38.3052444Z .vitepress/dist/vue/index.html
+2025-04-16T14:46:38.3052838Z .vitepress/dist/react
+2025-04-16T14:46:38.3053232Z .vitepress/dist/react/index.html
+2025-04-16T14:46:38.3053521Z .vitepress/dist/index.html
+2025-04-16T14:46:38.3053775Z .vitepress/dist/engineering
+2025-04-16T14:46:38.3054229Z .vitepress/dist/engineering/index.html
+2025-04-16T14:46:38.3054693Z .vitepress/dist/assets
+2025-04-16T14:46:38.3055322Z .vitepress/dist/assets/javascript_object_index.md.GJVOT7re.lean.js
+2025-04-16T14:46:38.3056416Z .vitepress/dist/assets/fragments_request-concurrency_index.md.bxfbrkZy.js
+2025-04-16T14:46:38.3057522Z .vitepress/dist/assets/fragments_virtual-list-plus_index.md.Bf2gWLFE.js
+2025-04-16T14:46:38.3058400Z .vitepress/dist/assets/javascript_math_index.md.CYEUrWlu.lean.js
+2025-04-16T14:46:38.3059121Z .vitepress/dist/assets/html-css_index.md.5acBvfz0.js
+2025-04-16T14:46:38.3059889Z .vitepress/dist/assets/inter-roman-vietnamese.BjW4sHH5.woff2
+2025-04-16T14:46:38.3060755Z .vitepress/dist/assets/inter-italic-vietnamese.BSbpV94h.woff2
+2025-04-16T14:46:38.3061453Z .vitepress/dist/assets/app.BSbeRi7I.js
+2025-04-16T14:46:38.3062075Z .vitepress/dist/assets/vue_index.md.Cf8CnThD.lean.js
+2025-04-16T14:46:38.3062759Z .vitepress/dist/assets/javascript_index.md.D4tNy-Fy.lean.js
+2025-04-16T14:46:38.3063264Z .vitepress/dist/assets/javascript_iterator_index.md.DNkBB2mm.lean.js
+2025-04-16T14:46:38.3063698Z .vitepress/dist/assets/ts_index.md.BAkOmrZ3.js
+2025-04-16T14:46:38.3064038Z .vitepress/dist/assets/style.5rsgNNw2.css
+2025-04-16T14:46:38.3064506Z .vitepress/dist/assets/fragments_virtual-list-plus_index.md.Bf2gWLFE.lean.js
+2025-04-16T14:46:38.3064975Z .vitepress/dist/assets/api-examples.md.DPf652ta.js
+2025-04-16T14:46:38.3065343Z .vitepress/dist/assets/index.md.CnXQ3730.lean.js
+2025-04-16T14:46:38.3065767Z .vitepress/dist/assets/inter-roman-cyrillic-ext.BBPuwvHQ.woff2
+2025-04-16T14:46:38.3066460Z .vitepress/dist/assets/inter-roman-greek-ext.CqjqNYQ-.woff2
+2025-04-16T14:46:38.3067095Z .vitepress/dist/assets/javascript_index.md.D4tNy-Fy.js
+2025-04-16T14:46:38.3067582Z .vitepress/dist/assets/fragments_virtual-list_index.md.6M64lAmC.lean.js
+2025-04-16T14:46:38.3068096Z .vitepress/dist/assets/fragments_extend_index.md.B-WKbN-u.lean.js
+2025-04-16T14:46:38.3068570Z .vitepress/dist/assets/markdown-examples.md.3PFn3dbg.lean.js
+2025-04-16T14:46:38.3068968Z .vitepress/dist/assets/vue_index.md.Cf8CnThD.js
+2025-04-16T14:46:38.3069401Z .vitepress/dist/assets/fragments_virtual-list_index.md.6M64lAmC.js
+2025-04-16T14:46:38.3069918Z .vitepress/dist/assets/javascript_math_index.md.CYEUrWlu.js
+2025-04-16T14:46:38.3091127Z .vitepress/dist/assets/react_index.md.Dnp0x7Ok.lean.js
+2025-04-16T14:46:38.3091916Z .vitepress/dist/assets/fragments_extend_index.md.B-WKbN-u.js
+2025-04-16T14:46:38.3092764Z .vitepress/dist/assets/inter-italic-cyrillic.By2_1cv3.woff2
+2025-04-16T14:46:38.3093579Z .vitepress/dist/assets/inter-roman-cyrillic.C5lxZ8CY.woff2
+2025-04-16T14:46:38.3094377Z .vitepress/dist/assets/engineering_index.md.DLrRmeea.lean.js
+2025-04-16T14:46:38.3095258Z .vitepress/dist/assets/inter-italic-greek-ext.1u6EdAuj.woff2
+2025-04-16T14:46:38.3096043Z .vitepress/dist/assets/inter-roman-latin.Di8DUHzh.woff2
+2025-04-16T14:46:38.3097060Z .vitepress/dist/assets/inter-italic-latin-ext.CN1xVJS-.woff2
+2025-04-16T14:46:38.3097870Z .vitepress/dist/assets/fragments_copy_index.md.D4BontSU.js
+2025-04-16T14:46:38.3098633Z .vitepress/dist/assets/inter-italic-latin.C2AdPX0b.woff2
+2025-04-16T14:46:38.3099397Z .vitepress/dist/assets/inter-roman-greek.BBVDIX6e.woff2
+2025-04-16T14:46:38.3100102Z .vitepress/dist/assets/ts_index.md.BAkOmrZ3.lean.js
+2025-04-16T14:46:38.3100826Z .vitepress/dist/assets/html-css_index.md.5acBvfz0.lean.js
+2025-04-16T14:46:38.3101778Z .vitepress/dist/assets/index.md.CnXQ3730.js
+2025-04-16T14:46:38.3102503Z .vitepress/dist/assets/fragments_index.md.BzwL98L9.lean.js
+2025-04-16T14:46:38.3103360Z .vitepress/dist/assets/javascript_object_index.md.GJVOT7re.js
+2025-04-16T14:46:38.3104202Z .vitepress/dist/assets/markdown-examples.md.3PFn3dbg.js
+2025-04-16T14:46:38.3104788Z .vitepress/dist/assets/chunks
+2025-04-16T14:46:38.3105376Z .vitepress/dist/assets/chunks/framework.BszT4cBM.js
+2025-04-16T14:46:38.3106034Z .vitepress/dist/assets/chunks/theme.BPMGdUFg.js
+2025-04-16T14:46:38.3106888Z .vitepress/dist/assets/react_index.md.Dnp0x7Ok.js
+2025-04-16T14:46:38.3107682Z .vitepress/dist/assets/javascript_proxy_index.md.CM5HHUsH.lean.js
+2025-04-16T14:46:38.3108535Z .vitepress/dist/assets/engineering_index.md.DLrRmeea.js
+2025-04-16T14:46:38.3109307Z .vitepress/dist/assets/fragments_copy_index.md.D4BontSU.lean.js
+2025-04-16T14:46:38.3109971Z .vitepress/dist/assets/fragments_index.md.BzwL98L9.js
+2025-04-16T14:46:38.3110443Z .vitepress/dist/assets/inter-italic-cyrillic-ext.r48I6akx.woff2
+2025-04-16T14:46:38.3110909Z .vitepress/dist/assets/api-examples.md.DPf652ta.lean.js
+2025-04-16T14:46:38.3111349Z .vitepress/dist/assets/inter-roman-latin-ext.4ZJIpNVo.woff2
+2025-04-16T14:46:38.3111809Z .vitepress/dist/assets/javascript_proxy_index.md.CM5HHUsH.js
+2025-04-16T14:46:38.3112270Z .vitepress/dist/assets/javascript_iterator_index.md.DNkBB2mm.js
+2025-04-16T14:46:38.3112714Z .vitepress/dist/assets/inter-italic-greek.DJ8dCoTZ.woff2
+2025-04-16T14:46:38.3113235Z .vitepress/dist/assets/fragments_request-concurrency_index.md.bxfbrkZy.lean.js
+2025-04-16T14:46:38.3113641Z .vitepress/dist/html-css
+2025-04-16T14:46:38.3113908Z .vitepress/dist/html-css/index.html
+2025-04-16T14:46:38.3114160Z .vitepress/dist/ts
+2025-04-16T14:46:38.3114379Z .vitepress/dist/ts/index.html
+2025-04-16T14:46:38.3114645Z .vitepress/dist/api-examples.html
+2025-04-16T14:46:38.3114899Z .vitepress/dist/fragments
+2025-04-16T14:46:38.3115193Z .vitepress/dist/fragments/request-concurrency
+2025-04-16T14:46:38.3115592Z .vitepress/dist/fragments/request-concurrency/index.html
+2025-04-16T14:46:38.3115969Z .vitepress/dist/fragments/virtual-list-plus
+2025-04-16T14:46:38.3116603Z .vitepress/dist/fragments/virtual-list-plus/index.html
+2025-04-16T14:46:38.3117025Z .vitepress/dist/fragments/index.html
+2025-04-16T14:46:38.3117552Z .vitepress/dist/fragments/copy
+2025-04-16T14:46:38.3117840Z .vitepress/dist/fragments/copy/index.html
+2025-04-16T14:46:38.3118132Z .vitepress/dist/fragments/extend
+2025-04-16T14:46:38.3118451Z .vitepress/dist/fragments/extend/index.html
+2025-04-16T14:46:38.3118773Z .vitepress/dist/fragments/virtual-list
+2025-04-16T14:46:38.3119110Z .vitepress/dist/fragments/virtual-list/index.html
+2025-04-16T14:46:38.3119413Z .vitepress/dist/vp-icons.css
+2025-04-16T14:46:38.3119648Z .vitepress/dist/404.html
+2025-04-16T14:46:38.3119874Z .vitepress/dist/hashmap.json
+2025-04-16T14:46:38.3120110Z .vitepress/dist/javascript
+2025-04-16T14:46:38.3120373Z .vitepress/dist/javascript/index.html
+2025-04-16T14:46:38.3120659Z .vitepress/dist/javascript/math
+2025-04-16T14:46:38.3120945Z .vitepress/dist/javascript/math/index.html
+2025-04-16T14:46:38.3121247Z .vitepress/dist/javascript/object
+2025-04-16T14:46:38.3121572Z .vitepress/dist/javascript/object/index.html
+2025-04-16T14:46:38.3121878Z .vitepress/dist/javascript/proxy
+2025-04-16T14:46:38.3122171Z .vitepress/dist/javascript/proxy/index.html
+2025-04-16T14:46:38.3122472Z .vitepress/dist/javascript/iterator
+2025-04-16T14:46:38.3122783Z .vitepress/dist/javascript/iterator/index.html
+2025-04-16T14:46:38.3123106Z .vitepress/dist/markdown-examples.html
+2025-04-16T14:46:38.3182921Z ##[group]Run peaceiris/actions-gh-pages@v3
+2025-04-16T14:46:38.3183187Z with:
+2025-04-16T14:46:38.3183537Z   github_token: ***
+2025-04-16T14:46:38.3183733Z   publish_dir: .vitepress/dist
+2025-04-16T14:46:38.3183955Z   publish_branch: gh-pages
+2025-04-16T14:46:38.3184167Z   allow_empty_commit: false
+2025-04-16T14:46:38.3184360Z   keep_files: false
+2025-04-16T14:46:38.3184532Z   force_orphan: false
+2025-04-16T14:46:38.3184713Z   enable_jekyll: false
+2025-04-16T14:46:38.3184899Z   disable_nojekyll: false
+2025-04-16T14:46:38.3185091Z   exclude_assets: .github
+2025-04-16T14:46:38.3185279Z ##[endgroup]
+2025-04-16T14:46:38.3803921Z [INFO] Usage https://github.com/peaceiris/actions-gh-pages#readme
+2025-04-16T14:46:38.3808523Z ##[group]Dump inputs
+2025-04-16T14:46:38.3808955Z [INFO] GithubToken: true
+2025-04-16T14:46:38.3809405Z [INFO] PublishBranch: gh-pages
+2025-04-16T14:46:38.3809730Z [INFO] PublishDir: .vitepress/dist
+2025-04-16T14:46:38.3810072Z [INFO] DestinationDir: 
+2025-04-16T14:46:38.3810370Z [INFO] ExternalRepository: 
+2025-04-16T14:46:38.3810641Z [INFO] AllowEmptyCommit: false
+2025-04-16T14:46:38.3810877Z [INFO] KeepFiles: false
+2025-04-16T14:46:38.3811092Z [INFO] ForceOrphan: false
+2025-04-16T14:46:38.3811305Z [INFO] UserName: 
+2025-04-16T14:46:38.3811526Z [INFO] UserEmail: 
+2025-04-16T14:46:38.3811721Z [INFO] CommitMessage: 
+2025-04-16T14:46:38.3812057Z [INFO] FullCommitMessage: 
+2025-04-16T14:46:38.3812416Z [INFO] TagName: 
+2025-04-16T14:46:38.3812681Z [INFO] TagMessage: 
+2025-04-16T14:46:38.3812949Z [INFO] EnableJekyll (DisableNoJekyll): false
+2025-04-16T14:46:38.3813206Z [INFO] CNAME: 
+2025-04-16T14:46:38.3813411Z [INFO] ExcludeAssets .github
+2025-04-16T14:46:38.3813567Z 
+2025-04-16T14:46:38.3813857Z ##[endgroup]
+2025-04-16T14:46:38.3814266Z ##[group]Setup auth token
+2025-04-16T14:46:38.3814589Z [INFO] setup GITHUB_TOKEN
+2025-04-16T14:46:38.3815240Z ##[endgroup]
+2025-04-16T14:46:38.3815661Z ##[group]Prepare publishing assets
+2025-04-16T14:46:38.3819235Z [INFO] ForceOrphan: false
+2025-04-16T14:46:38.3865589Z [command]/usr/bin/git clone --depth=1 --single-branch --branch gh-pages ***github.com/Bug-codergb/about-me.git /home/runner/actions_github_pages_1744814798381
+2025-04-16T14:46:38.3901955Z Cloning into '/home/runner/actions_github_pages_1744814798381'...
+2025-04-16T14:46:38.5997435Z [INFO] clean up /home/runner/actions_github_pages_1744814798381
+2025-04-16T14:46:38.5998100Z [INFO] chdir /home/runner/actions_github_pages_1744814798381
+2025-04-16T14:46:38.6015586Z [command]/usr/bin/git rm -r --ignore-unmatch *
+2025-04-16T14:46:38.6185718Z rm '.nojekyll'
+2025-04-16T14:46:38.6186067Z rm '404.html'
+2025-04-16T14:46:38.6186726Z rm 'api-examples.html'
+2025-04-16T14:46:38.6187554Z rm 'assets/api-examples.md.DPf652ta.js'
+2025-04-16T14:46:38.6188152Z rm 'assets/api-examples.md.DPf652ta.lean.js'
+2025-04-16T14:46:38.6188642Z rm 'assets/app.BSbeRi7I.js'
+2025-04-16T14:46:38.6189125Z rm 'assets/chunks/framework.BszT4cBM.js'
+2025-04-16T14:46:38.6189469Z rm 'assets/chunks/theme.BPMGdUFg.js'
+2025-04-16T14:46:38.6189813Z rm 'assets/engineering_index.md.DLrRmeea.js'
+2025-04-16T14:46:38.6190163Z rm 'assets/engineering_index.md.DLrRmeea.lean.js'
+2025-04-16T14:46:38.6190526Z rm 'assets/fragments_copy_index.md.D4BontSU.js'
+2025-04-16T14:46:38.6190894Z rm 'assets/fragments_copy_index.md.D4BontSU.lean.js'
+2025-04-16T14:46:38.6191251Z rm 'assets/fragments_extend_index.md.B-WKbN-u.js'
+2025-04-16T14:46:38.6191619Z rm 'assets/fragments_extend_index.md.B-WKbN-u.lean.js'
+2025-04-16T14:46:38.6191961Z rm 'assets/fragments_index.md.BzwL98L9.js'
+2025-04-16T14:46:38.6192282Z rm 'assets/fragments_index.md.BzwL98L9.lean.js'
+2025-04-16T14:46:38.6192680Z rm 'assets/fragments_request-concurrency_index.md.bxfbrkZy.js'
+2025-04-16T14:46:38.6193419Z rm 'assets/fragments_request-concurrency_index.md.bxfbrkZy.lean.js'
+2025-04-16T14:46:38.6194204Z rm 'assets/fragments_virtual-list-plus_index.md.Bf2gWLFE.js'
+2025-04-16T14:46:38.6194849Z rm 'assets/fragments_virtual-list-plus_index.md.Bf2gWLFE.lean.js'
+2025-04-16T14:46:38.6195857Z rm 'assets/fragments_virtual-list_index.md.6M64lAmC.js'
+2025-04-16T14:46:38.6196586Z rm 'assets/fragments_virtual-list_index.md.6M64lAmC.lean.js'
+2025-04-16T14:46:38.6197213Z rm 'assets/html-css_index.md.5acBvfz0.js'
+2025-04-16T14:46:38.6197664Z rm 'assets/html-css_index.md.5acBvfz0.lean.js'
+2025-04-16T14:46:38.6197984Z rm 'assets/index.md.CnXQ3730.js'
+2025-04-16T14:46:38.6198269Z rm 'assets/index.md.CnXQ3730.lean.js'
+2025-04-16T14:46:38.6198613Z rm 'assets/inter-italic-cyrillic-ext.r48I6akx.woff2'
+2025-04-16T14:46:38.6199008Z rm 'assets/inter-italic-cyrillic.By2_1cv3.woff2'
+2025-04-16T14:46:38.6199376Z rm 'assets/inter-italic-greek-ext.1u6EdAuj.woff2'
+2025-04-16T14:46:38.6199772Z rm 'assets/inter-italic-greek.DJ8dCoTZ.woff2'
+2025-04-16T14:46:38.6200143Z rm 'assets/inter-italic-latin-ext.CN1xVJS-.woff2'
+2025-04-16T14:46:38.6200490Z rm 'assets/inter-italic-latin.C2AdPX0b.woff2'
+2025-04-16T14:46:38.6200851Z rm 'assets/inter-italic-vietnamese.BSbpV94h.woff2'
+2025-04-16T14:46:38.6201241Z rm 'assets/inter-roman-cyrillic-ext.BBPuwvHQ.woff2'
+2025-04-16T14:46:38.6201614Z rm 'assets/inter-roman-cyrillic.C5lxZ8CY.woff2'
+2025-04-16T14:46:38.6201969Z rm 'assets/inter-roman-greek-ext.CqjqNYQ-.woff2'
+2025-04-16T14:46:38.6202309Z rm 'assets/inter-roman-greek.BBVDIX6e.woff2'
+2025-04-16T14:46:38.6202652Z rm 'assets/inter-roman-latin-ext.4ZJIpNVo.woff2'
+2025-04-16T14:46:38.6202998Z rm 'assets/inter-roman-latin.Di8DUHzh.woff2'
+2025-04-16T14:46:38.6203342Z rm 'assets/inter-roman-vietnamese.BjW4sHH5.woff2'
+2025-04-16T14:46:38.6203683Z rm 'assets/javascript_index.md.D4tNy-Fy.js'
+2025-04-16T14:46:38.6204018Z rm 'assets/javascript_index.md.D4tNy-Fy.lean.js'
+2025-04-16T14:46:38.6204373Z rm 'assets/javascript_iterator_index.md.DNkBB2mm.js'
+2025-04-16T14:46:38.6204773Z rm 'assets/javascript_iterator_index.md.DNkBB2mm.lean.js'
+2025-04-16T14:46:38.6205138Z rm 'assets/javascript_math_index.md.CYEUrWlu.js'
+2025-04-16T14:46:38.6205494Z rm 'assets/javascript_math_index.md.CYEUrWlu.lean.js'
+2025-04-16T14:46:38.6205865Z rm 'assets/javascript_object_index.md.GJVOT7re.js'
+2025-04-16T14:46:38.6206452Z rm 'assets/javascript_object_index.md.GJVOT7re.lean.js'
+2025-04-16T14:46:38.6206874Z rm 'assets/javascript_proxy_index.md.CM5HHUsH.js'
+2025-04-16T14:46:38.6207258Z rm 'assets/javascript_proxy_index.md.CM5HHUsH.lean.js'
+2025-04-16T14:46:38.6207609Z rm 'assets/markdown-examples.md.3PFn3dbg.js'
+2025-04-16T14:46:38.6207965Z rm 'assets/markdown-examples.md.3PFn3dbg.lean.js'
+2025-04-16T14:46:38.6208293Z rm 'assets/react_index.md.Dnp0x7Ok.js'
+2025-04-16T14:46:38.6208626Z rm 'assets/react_index.md.Dnp0x7Ok.lean.js'
+2025-04-16T14:46:38.6208930Z rm 'assets/style.5rsgNNw2.css'
+2025-04-16T14:46:38.6209203Z rm 'assets/ts_index.md.BAkOmrZ3.js'
+2025-04-16T14:46:38.6209675Z rm 'assets/ts_index.md.BAkOmrZ3.lean.js'
+2025-04-16T14:46:38.6209983Z rm 'assets/vue_index.md.Cf8CnThD.js'
+2025-04-16T14:46:38.6210279Z rm 'assets/vue_index.md.Cf8CnThD.lean.js'
+2025-04-16T14:46:38.6210552Z rm 'engineering/index.html'
+2025-04-16T14:46:38.6210801Z rm 'fragments/copy/index.html'
+2025-04-16T14:46:38.6211067Z rm 'fragments/extend/index.html'
+2025-04-16T14:46:38.6211305Z rm 'fragments/index.html'
+2025-04-16T14:46:38.6211578Z rm 'fragments/request-concurrency/index.html'
+2025-04-16T14:46:38.6211904Z rm 'fragments/virtual-list-plus/index.html'
+2025-04-16T14:46:38.6212203Z rm 'fragments/virtual-list/index.html'
+2025-04-16T14:46:38.6212454Z rm 'hashmap.json'
+2025-04-16T14:46:38.6212659Z rm 'html-css/index.html'
+2025-04-16T14:46:38.6212856Z rm 'index.html'
+2025-04-16T14:46:38.6213054Z rm 'javascript/index.html'
+2025-04-16T14:46:38.6213304Z rm 'javascript/iterator/index.html'
+2025-04-16T14:46:38.6213572Z rm 'javascript/math/index.html'
+2025-04-16T14:46:38.6213834Z rm 'javascript/object/index.html'
+2025-04-16T14:46:38.6214104Z rm 'javascript/proxy/index.html'
+2025-04-16T14:46:38.6214355Z rm 'markdown-examples.html'
+2025-04-16T14:46:38.6214578Z rm 'react/index.html'
+2025-04-16T14:46:38.6214770Z rm 'ts/index.html'
+2025-04-16T14:46:38.6214960Z rm 'vp-icons.css'
+2025-04-16T14:46:38.6215304Z rm 'vue/index.html'
+2025-04-16T14:46:38.6215633Z [INFO] chdir /home/runner/actions_github_pages_1744814798381
+2025-04-16T14:46:38.6215980Z [INFO] prepare publishing assets
+2025-04-16T14:46:38.6216795Z [INFO] copy /home/runner/work/about-me/about-me/.vitepress/dist to /home/runner/actions_github_pages_1744814798381
+2025-04-16T14:46:39.0347857Z cp: no such file or directory: /home/runner/work/about-me/about-me/.vitepress/dist/.*
+2025-04-16T14:46:39.0349882Z [INFO] delete excluded assets
+2025-04-16T14:46:39.0380934Z rm: no paths given
+2025-04-16T14:46:39.0382830Z [INFO] Created /home/runner/actions_github_pages_1744814798381/.nojekyll
+2025-04-16T14:46:39.0384180Z ##[endgroup]
+2025-04-16T14:46:39.0384535Z ##[group]Setup Git config
+2025-04-16T14:46:39.0399196Z [command]/usr/bin/git remote rm origin
+2025-04-16T14:46:39.0453950Z [command]/usr/bin/git remote add origin ***github.com/Bug-codergb/about-me.git
+2025-04-16T14:46:39.0501418Z [command]/usr/bin/git add --all
+2025-04-16T14:46:39.0611446Z [command]/usr/bin/git config user.name Bug-codergb
+2025-04-16T14:46:39.0658112Z [command]/usr/bin/git config user.email Bug-codergb@users.noreply.github.com
+2025-04-16T14:46:39.0688253Z ##[endgroup]
+2025-04-16T14:46:39.0688603Z ##[group]Create a commit
+2025-04-16T14:46:39.0703097Z [command]/usr/bin/git commit -m deploy: 895f6a7fc0f7de2cbcb43d039ec78f0c3b287ebb
+2025-04-16T14:46:39.0790198Z On branch gh-pages
+2025-04-16T14:46:39.0790550Z nothing to commit, working tree clean
+2025-04-16T14:46:39.0795275Z [INFO] skip commit
+2025-04-16T14:46:39.0796122Z ##[endgroup]
+2025-04-16T14:46:39.0796927Z ##[group]Push the commit or tag
+2025-04-16T14:46:39.0810042Z [command]/usr/bin/git push origin gh-pages
+2025-04-16T14:46:39.2524368Z Everything up-to-date
+2025-04-16T14:46:39.2559951Z ##[endgroup]
+2025-04-16T14:46:39.2560410Z [INFO] Action successfully completed
+2025-04-16T14:46:39.2666447Z Post job cleanup.
+2025-04-16T14:46:39.4342058Z Post job cleanup.
+2025-04-16T14:46:39.5316065Z [command]/usr/bin/git version
+2025-04-16T14:46:39.5355585Z git version 2.49.0
+2025-04-16T14:46:39.5401655Z Temporarily overriding HOME='/home/runner/work/_temp/06519146-97e1-4655-a839-f97fde476d6f' before making global git config changes
+2025-04-16T14:46:39.5403072Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-16T14:46:39.5408779Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/about-me/about-me
+2025-04-16T14:46:39.5455602Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-16T14:46:39.5491658Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-16T14:46:39.5878242Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-16T14:46:39.5907002Z http.https://github.com/.extraheader
+2025-04-16T14:46:39.5924513Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-16T14:46:39.5965542Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-16T14:46:39.6347884Z Cleaning up orphan processes
